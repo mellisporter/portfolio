@@ -6,7 +6,7 @@ const projects = [
     title: "Senior Consulting Advisors",
     category: "WordPress",
     description: "Full website design and development for a senior care consulting firm. Custom page layouts, location finder, accessibility features, blog architecture, and integrated call-to-action flows.",
-    tech: ["WordPress", "CSS", "JavaScript", "SEO", "Accessibility"],
+    tech: ["WordPress", "CSS", "JavaScript", "SEO", "Section 508"],
     link: "https://floridaseniorconsulting.com",
     image: "/images/sca.png",
   },
@@ -452,6 +452,91 @@ export default function Portfolio() {
           {filtered.map((project) => (
             <Card key={project.id} project={project} />
           ))}
+        </div>
+
+        {/* Speaking & Workshops */}
+        <div style={{ paddingBottom: 80 }}>
+          <h2 style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: 28,
+            fontWeight: 800,
+            color: "#fff",
+            marginBottom: 8,
+          }}>
+            Speaking & Workshops
+          </h2>
+          <p style={{
+            fontSize: 14,
+            color: "#bbb",
+            marginBottom: 32,
+            fontWeight: 300,
+          }}>
+            Presented at national conferences and led hands-on client workshops on web development, CMS platforms, and content strategy.
+          </p>
+
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 20,
+          }}>
+            {[
+              {
+                src: "/images/texascommunicators.jpg",
+                caption: "Texas Communicators Conference",
+                location: "Round Rock, TX — 2026",
+              },
+              {
+                src: "/images/connect2025.png",
+                caption: "NRECA Connect Conference",
+                location: "Kansas City, MO — 2025",
+              },
+              {
+                src: "/images/rushmoreworkshop.png",
+                caption: "Rushmore Electric Workshop",
+                location: "South Dakota — 2024",
+              },
+            ].map((item) => (
+              <div key={item.caption} style={{
+                borderRadius: 10,
+                overflow: "hidden",
+                border: "1px solid #252525",
+                background: "#141414",
+              }}>
+                <div style={{
+                  height: 220,
+                  overflow: "hidden",
+                }}>
+                  <img
+                    src={item.src}
+                    alt={item.caption}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "center",
+                    }}
+                  />
+                </div>
+                <div style={{ padding: "14px 18px" }}>
+                  <p style={{
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: "#fff",
+                    margin: 0,
+                  }}>
+                    {item.caption}
+                  </p>
+                  <p style={{
+                    fontSize: 12,
+                    color: "#999",
+                    margin: "4px 0 0",
+                  }}>
+                    {item.location}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
