@@ -6,7 +6,7 @@ const projects = [
     title: "Senior Consulting Advisors",
     category: "WordPress",
     description: "Full website design and development for a senior care consulting firm. Custom page layouts, location finder, accessibility features, blog architecture, and integrated call-to-action flows.",
-    tech: ["WordPress", "CSS", "JavaScript", "SEO", "Section 508"],
+    tech: ["WordPress", "CSS", "JavaScript", "SEO", "Accessibility"],
     link: "https://floridaseniorconsulting.com",
     image: "/images/sca.png",
   },
@@ -374,6 +374,48 @@ export default function Portfolio() {
             includes a collection of full-time, contract, and personal work.
           </p>
         </header>
+
+        {/* Appian Cert */}
+        <div style={{
+          padding: "16px 20px",
+          marginBottom: 28,
+          background: "#141414",
+          border: "1px solid #252525",
+          borderRadius: 8,
+          display: "flex",
+          alignItems: "center",
+          gap: 12,
+          flexWrap: "wrap",
+        }}>
+          <span style={{ fontSize: 14, color: "#ddd", fontWeight: 400 }}>
+            Recently certified as an <strong style={{ color: "#fff" }}>Appian Associate Developer</strong>.
+          </span>
+          <a
+            href="https://community.appian.com/members/mattp872778"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "#fff",
+              fontSize: 12,
+              fontWeight: 600,
+              textDecoration: "none",
+              padding: "5px 14px",
+              border: "1px solid #555",
+              borderRadius: 6,
+              transition: "all 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.borderColor = "#fff";
+              e.target.style.background = "rgba(255,255,255,0.1)";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.borderColor = "#555";
+              e.target.style.background = "transparent";
+            }}
+          >
+            View certification &#8599;
+          </a>
+        </div>
 
         {/* Filters */}
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap", paddingBottom: 36 }}>
