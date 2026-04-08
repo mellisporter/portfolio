@@ -1,14 +1,5 @@
 import { useState } from "react";
 
-/*
-  IMAGE SETUP:
-  1. Take screenshots of each site
-  2. Put them in your /public/images/ folder
-  3. Name them: sca.png, cobbemc.png, casscounty.png, rushmore.png, shine.png, backlog.png
-  
-  The cards reference these paths below. Once deployed to Vercel they'll load from /images/
-*/
-
 const projects = [
   {
     id: 1,
@@ -57,12 +48,42 @@ const projects = [
   },
   {
     id: 6,
+    title: "Infinity",
+    category: "Web App",
+    description: "Personal project currently in development. A fantasy football platform with unique game modes that go beyond traditional fantasy formats. Built with a modern web stack and real-time features.",
+    tech: ["Next.js", "React", "Supabase", "Vercel", "JavaScript"],
+    link: "https://playinfinity.io/",
+    image: "/images/infinity.png",
+  },
+  {
+    id: 7,
+    title: "JRNY",
+    category: "Web App",
+    description: "Fitness tracking application built end-to-end from wireframes. Uses PostgreSQL one-to-many relationships to track and analyze user fitness data over time.",
+    tech: ["Django", "Python", "PostgreSQL", "HTML", "CSS"],
+    link: "https://github.com/mellisporter/jrny-app",
+    image: "/images/jrny.png",
+    demo: "https://www.youtube.com/watch?v=9d0E54UEoxQ",
+  },
+  {
+    id: 8,
     title: "Back.log",
     category: "Web App",
     description: "Personal CRUD application for storing and managing video game collection data. Built during General Assembly's Software Engineering Immersive.",
     tech: ["Django", "Python", "PostgreSQL", "HTML", "CSS"],
     link: "https://github.com/mellisporter/backlog-app",
     image: "/images/backlog.png",
+    demo: "https://www.youtube.com/watch?v=4DO1YQazwEE",
+  },
+  {
+    id: 9,
+    title: "CoTeach",
+    category: "Web App",
+    description: "Video platform for teachers to upload and share educational content. Built with a separate frontend and backend architecture for scalability.",
+    tech: ["React", "Express.js", "MongoDB", "Node.js", "CSS"],
+    link: "https://github.com/mellisporter/CoTeach_frontend",
+    image: "/images/coteach.png",
+    demo: "https://www.youtube.com/watch?v=MtPHbPc5WUc",
   },
 ];
 
@@ -80,7 +101,7 @@ function Card({ project }) {
         background: "#141414",
         borderRadius: 12,
         overflow: "hidden",
-        border: hovered ? "1px solid #444" : "1px solid #222",
+        border: hovered ? "1px solid #555" : "1px solid #252525",
         transition: "all 0.3s ease",
         transform: hovered ? "translateY(-4px)" : "none",
         cursor: "default",
@@ -102,7 +123,7 @@ function Card({ project }) {
               height: "100%",
               objectFit: "cover",
               objectPosition: "top",
-              opacity: hovered ? 1 : 0.8,
+              opacity: hovered ? 1 : 0.85,
               transition: "opacity 0.3s ease, transform 0.5s ease",
               transform: hovered ? "scale(1.03)" : "scale(1)",
             }}
@@ -121,7 +142,7 @@ function Card({ project }) {
             <span style={{ fontSize: 40, opacity: 0.3 }}>
               {project.category === "Drupal" ? "\u{1F527}" : project.category === "WordPress" ? "\u{1F310}" : "\u{1F3AE}"}
             </span>
-            <span style={{ color: "#444", fontSize: 13 }}>Screenshot coming soon</span>
+            <span style={{ color: "#555", fontSize: 13 }}>Screenshot coming soon</span>
           </div>
         )}
 
@@ -129,8 +150,8 @@ function Card({ project }) {
           position: "absolute",
           top: 14,
           left: 14,
-          background: "rgba(0,0,0,0.65)",
-          color: "#bbb",
+          background: "rgba(0,0,0,0.7)",
+          color: "#ddd",
           fontSize: 11,
           fontWeight: 600,
           padding: "4px 12px",
@@ -160,32 +181,68 @@ function Card({ project }) {
           }}>
             {project.title}
           </h3>
-          {project.link && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: "#555",
-                fontSize: 13,
-                textDecoration: "none",
-                flexShrink: 0,
-                marginLeft: 16,
-                transition: "color 0.2s",
-                fontWeight: 500,
-              }}
-              onMouseEnter={(e) => e.target.style.color = "#fff"}
-              onMouseLeave={(e) => e.target.style.color = "#555"}
-            >
-              Visit &#8599;
-            </a>
-          )}
+          <div style={{ display: "flex", gap: 10, flexShrink: 0, marginLeft: 16 }}>
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "#0a0a0a",
+                  fontSize: 12,
+                  textDecoration: "none",
+                  fontWeight: 600,
+                  background: "#e0e0e0",
+                  padding: "5px 14px",
+                  borderRadius: 6,
+                  transition: "all 0.2s ease",
+                  letterSpacing: "0.3px",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.background = "#fff";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.background = "#e0e0e0";
+                }}
+              >
+                Demo &#9654;
+              </a>
+            )}
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "#fff",
+                  fontSize: 12,
+                  textDecoration: "none",
+                  fontWeight: 600,
+                  padding: "5px 14px",
+                  border: "1px solid #555",
+                  borderRadius: 6,
+                  transition: "all 0.2s ease",
+                  letterSpacing: "0.3px",
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.borderColor = "#fff";
+                  e.target.style.background = "rgba(255,255,255,0.1)";
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.borderColor = "#555";
+                  e.target.style.background = "transparent";
+                }}
+              >
+                Visit &#8599;
+              </a>
+            )}
+          </div>
         </div>
 
         <p style={{
           fontSize: 14,
           lineHeight: 1.7,
-          color: "#888",
+          color: "#ccc",
           margin: "0 0 18px",
         }}>
           {project.description}
@@ -195,8 +252,8 @@ function Card({ project }) {
           {project.tech.map((t) => (
             <span key={t} style={{
               fontSize: 11,
-              color: "#666",
-              background: "#1c1c1c",
+              color: "#aaa",
+              background: "#1e1e1e",
               padding: "4px 10px",
               borderRadius: 4,
               fontWeight: 500,
@@ -254,7 +311,7 @@ export default function Portfolio() {
               </h1>
               <p style={{
                 fontSize: 17,
-                color: "#777",
+                color: "#bbb",
                 marginTop: 12,
                 fontWeight: 300,
                 letterSpacing: "0.3px",
@@ -274,22 +331,24 @@ export default function Portfolio() {
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    color: "#777",
+                    color: "#ccc",
                     textDecoration: "none",
                     fontSize: 13,
                     fontWeight: 500,
                     padding: "7px 16px",
-                    border: "1px solid #2a2a2a",
+                    border: "1px solid #444",
                     borderRadius: 6,
                     transition: "all 0.2s ease",
                   }}
                   onMouseEnter={(e) => {
                     e.target.style.color = "#fff";
-                    e.target.style.borderColor = "#555";
+                    e.target.style.borderColor = "#888";
+                    e.target.style.background = "rgba(255,255,255,0.05)";
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.color = "#777";
-                    e.target.style.borderColor = "#2a2a2a";
+                    e.target.style.color = "#ccc";
+                    e.target.style.borderColor = "#444";
+                    e.target.style.background = "transparent";
                   }}
                 >
                   {link.label}
@@ -301,7 +360,7 @@ export default function Portfolio() {
           <p style={{
             fontSize: 15,
             lineHeight: 1.8,
-            color: "#999",
+            color: "#ddd",
             maxWidth: 720,
             marginTop: 32,
             fontWeight: 300,
@@ -325,9 +384,9 @@ export default function Portfolio() {
               style={{
                 padding: "8px 22px",
                 borderRadius: 24,
-                border: active === cat ? "1px solid #fff" : "1px solid #2a2a2a",
+                border: active === cat ? "1px solid #fff" : "1px solid #444",
                 background: active === cat ? "#fff" : "transparent",
-                color: active === cat ? "#0a0a0a" : "#777",
+                color: active === cat ? "#0a0a0a" : "#ccc",
                 fontSize: 13,
                 fontWeight: 600,
                 cursor: "pointer",
@@ -356,11 +415,11 @@ export default function Portfolio() {
 
       {/* Footer */}
       <footer style={{
-        borderTop: "1px solid #161616",
+        borderTop: "1px solid #1a1a1a",
         padding: "36px 40px",
         textAlign: "center",
       }}>
-        <p style={{ color: "#444", fontSize: 13, margin: 0 }}>
+        <p style={{ color: "#777", fontSize: 13, margin: 0 }}>
           Matt Porter &nbsp;&middot;&nbsp; Herndon, VA &nbsp;&middot;&nbsp; 703-638-8874 &nbsp;&middot;&nbsp; matthew.ellis.porter@gmail.com
         </p>
       </footer>
