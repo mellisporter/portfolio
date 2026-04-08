@@ -265,7 +265,7 @@ export default function Portfolio() {
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", paddingTop: 8 }}>
               {[
                 { label: "Email", href: "mailto:matthew.ellis.porter@gmail.com" },
-                { label: "LinkedIn", href: "https://www.linkedin.com/in/matthewellisporter" },
+                { label: "LinkedIn", href: "https://www.linkedin.com/in/mellisporter" },
                 { label: "GitHub", href: "https://github.com/mellisporter" },
               ].map((link) => (
                 <a
