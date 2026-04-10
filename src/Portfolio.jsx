@@ -47,6 +47,15 @@ const projects = [
     image: "/images/shine.png",
   },
   {
+    id: 10,
+    title: "Georgia Magazine",
+    category: "Drupal",
+    description: "Digital magazine built on Drupal with a taxonomy-driven content architecture. Configured structured categories for digital issues, back issues, and yearly archives, powering custom views that allow readers to browse by issue, date, and topic.",
+    tech: ["Drupal", "Taxonomy", "Custom Views", "Content Architecture", "PHP"],
+    link: "https://www.georgiamagazine.org/",
+    image: "/images/georgiamagazine.png",
+  },
+  {
     id: 6,
     title: "Infinity",
     category: "Web App",
@@ -85,9 +94,18 @@ const projects = [
     image: "/images/coteach.png",
     demo: "https://www.youtube.com/watch?v=MtPHbPc5WUc",
   },
+  {
+    id: 11,
+    title: "Automated Looker Studio Report",
+    category: "Google Analytics",
+    description: "Built an automated reporting dashboard that pulls GA4 web traffic data, custom data blends, and custom queries to generate interactive monthly usage reports for cooperative clients. Replaced a manual reporting process and saved the team 40 minutes per report each month.",
+    tech: ["Looker Studio", "Google Analytics 4", "BigQuery", "Data Blending", "Automation"],
+    link: null,
+    image: "/images/lookerstudio.png",
+  },
 ];
 
-const categories = ["All", "Drupal", "WordPress", "Web App"];
+const categories = ["All", "Drupal", "WordPress", "Web App", "Google Analytics"];
 
 function Card({ project }) {
   const [hovered, setHovered] = useState(false);
