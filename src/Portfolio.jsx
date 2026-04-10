@@ -94,18 +94,9 @@ const projects = [
     image: "/images/coteach.png",
     demo: "https://www.youtube.com/watch?v=MtPHbPc5WUc",
   },
-  {
-    id: 11,
-    title: "Automated Looker Studio Report",
-    category: "Google Analytics",
-    description: "Built an automated reporting dashboard that pulls GA4 web traffic data, custom data blends, and custom queries to generate interactive monthly usage reports for cooperative clients. Replaced a manual reporting process and saved the team 40 minutes per report each month.",
-    tech: ["Looker Studio", "Google Analytics 4", "BigQuery", "Data Blending", "Automation"],
-    link: null,
-    image: "/images/lookerstudio.png",
-  },
 ];
 
-const categories = ["All", "Drupal", "WordPress", "Web App", "Google Analytics"];
+const categories = ["All", "Drupal", "WordPress", "Web App"];
 
 function Card({ project }) {
   const [hovered, setHovered] = useState(false);
