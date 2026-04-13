@@ -325,7 +325,7 @@ export default function Portfolio() {
                 fontWeight: 300,
                 letterSpacing: "0.3px",
               }}>
-                Web Developer &nbsp;/&nbsp; Drupal &nbsp;/&nbsp; WordPress &nbsp;/&nbsp; CMS Platforms
+                Web Developer &nbsp;/&nbsp; Drupal &nbsp;/&nbsp; WordPress &nbsp;/&nbsp; Low-Code & CMS Platforms
               </p>
             </div>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", paddingTop: 8 }}>
