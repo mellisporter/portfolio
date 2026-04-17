@@ -94,9 +94,18 @@ const projects = [
     image: "/images/coteach.png",
     demo: "https://www.youtube.com/watch?v=MtPHbPc5WUc",
   },
+  {
+    id: 11,
+    title: "Automated Looker Studio Report",
+    category: "Google Analytics",
+    description: "Built an automated reporting dashboard that pulls GA4 web traffic data, custom data blends, and custom queries to generate interactive monthly usage reports for cooperative clients. Replaced a manual reporting process and saved the team 40 minutes per report each month.",
+    tech: ["Looker Studio", "Google Analytics 4", "BigQuery", "Data Blending", "Automation"],
+    link: "https://lookerstudio.google.com/reporting/82b3790a-5ab9-4a2b-b7dc-ef822fc9ec96",
+    image: "/images/lookerstudio.png",
+  },
 ];
 
-const categories = ["All", "Drupal", "WordPress", "Web App"];
+const categories = ["All", "Drupal", "WordPress", "Web App", "Google Analytics"];
 
 function Card({ project }) {
   const [hovered, setHovered] = useState(false);
@@ -325,7 +334,7 @@ export default function Portfolio() {
                 fontWeight: 300,
                 letterSpacing: "0.3px",
               }}>
-                Web Developer &nbsp;/&nbsp; Drupal &nbsp;/&nbsp; WordPress &nbsp;/&nbsp; Low-Code & CMS Platforms
+                Web Developer &nbsp;/&nbsp; Drupal &nbsp;/&nbsp; WordPress &nbsp;/&nbsp; CMS Platforms
               </p>
             </div>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", paddingTop: 8 }}>
